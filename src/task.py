@@ -30,7 +30,7 @@ class task_manager:
         # deadline with *
         # repeat with ~
         if task == None:
-            task=input("Task field can not be blank Enter the task")
+            task=input("Task field can not be blank. Enter the task: ")
         self.task_list[str(self.task_id)] = {
             "task": task,
             "state": state,
@@ -44,7 +44,9 @@ class task_manager:
         df = pd.DataFrame.from_dict(self.task_list).transpose()
         print(df)
 
-    def del_task(self, task_id):
+    def del_task(self, task_id=None):
+        if task_id == None:
+            task_id=input("Task ID field can not be blank. Enter the task id: ")
         try:
             del self.task_list[str(task_id)]
             self.save_tasks()
@@ -71,7 +73,13 @@ class task_manager:
             ).transpose()
         )
 
-    def edit_task(self, task_id, task_key, task_value):
+    def edit_task(self, task_id=None, task_key=None, task_value=None):
+        if task_id == None:
+            task_id=input("Task ID field can not be blank. Enter the task id: ")
+        if task_key == None:
+            task_key=input("Task KEY field can not be blank. Enter the task key: ")
+        if task_value == None:
+            task_value=input("Task VALUE field can not be blank. Enter the task value: ")
         try:
             if str(task_id) in self.task_list:
                 if task_key in self.task_list[str(task_id)]:
