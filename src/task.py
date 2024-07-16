@@ -21,7 +21,7 @@ class task_manager:
             with open(self.file, "w") as f:
                 json.dump(self.task_list, f)
 
-    def add_task(self, task, state="todo", tags=None, note=None):
+    def add_task(self, task=None, state="todo", tags=None, note=None):
         # tags
         # tags with #
         # Context with @
@@ -29,6 +29,8 @@ class task_manager:
         # priority with !
         # deadline with *
         # repeat with ~
+        if task == None:
+            task=input("Task field can not be blank Enter the task")
         self.task_list[str(self.task_id)] = {
             "task": task,
             "state": state,
