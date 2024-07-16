@@ -32,11 +32,8 @@ def cli():
 
 
 def main():
-    #cli()
-    api()
+    cli()
+    #api()
+main()
+print("project Todo List Task manager")    
 
-    
-
-if "__name__" == "__main__":
-    print("project Todo List Task manager")
-    main()
