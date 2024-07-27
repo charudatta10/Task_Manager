@@ -56,6 +56,10 @@ exe file_name:
 
 #########-ADD-Custom-Tasks-Here-##################
 
+add:
+    #!pwsh
+    p src/task
+
 
 
 
